@@ -15,7 +15,6 @@ app.use(bodyParser.json())
 
 app.post('/api/databanks/meter',(req,res)=>{
     res.json({details:req.body});
-    logger.info(req.body);
     console.log(req.body)
 })
 
