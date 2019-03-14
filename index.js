@@ -18,6 +18,10 @@ app.get('/',(req,res)=>{
 app.post('/api/databanks/meter',(req,res)=>{
     res.json({details:req.body});
     console.log(req.body)
-})
+});
+app.get('/api/databanks/meter',(req,res)=>{
+    res.json({details:req.body});
+    console.log(req.body)
+});
 
 app.listen(port, () => console.log(`server is running at http://localhost:${port}`));
