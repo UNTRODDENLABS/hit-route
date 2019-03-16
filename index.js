@@ -39,13 +39,10 @@ app.post('/api/databanks/create_pc_for_hid',(req,res)=>{
     });
 });
  app.post('/api/databanks/meter',(req,res)=>{
-     let body = req.body;
     pc.findById('5c8c94b6e765641f3cfd464f')
     .select('pc')
     .exec()
-    .then(x=>res.json({body,
-        pc:x.pc,
-    }))
+    .then(x=>res.json(res.body))
     .catch(x=>res.send(x));
 
 
