@@ -39,10 +39,11 @@ app.post('/api/databanks/create_pc_for_hid',(req,res)=>{
     });
 });
  app.post('/api/databanks/meter',(req,res)=>{
+     let body = req.body;
     pc.findById('5c8c94b6e765641f3cfd464f')
     .select('pc')
     .exec()
-    .then(x=>res.json({details:req.body,
+    .then(x=>res.json({body,
         pc:x.pc,
     }))
     .catch(x=>res.send(x));
@@ -53,10 +54,11 @@ app.post('/api/databanks/create_pc_for_hid',(req,res)=>{
     console.log(JSON.stringify(req.body))
 });
 app.get('/api/databanks/meter',(req,res)=>{
+    let body = req.body;
     pc.findById('5c8c94b6e765641f3cfd464f')
     .select('pc')
     .exec()
-    .then(x=>res.json({details:req.body,
+    .then(x=>res.json({body,
         pc:x.pc,
     }))
     .catch(x=>res.send(x));
