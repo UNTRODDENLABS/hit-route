@@ -2,9 +2,11 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const pc = require('./model/pcschema');
 const cors = require('cors');
+const morgan =  require('morgan');
 const app = express();
 const port = process.env.PORT ||3000;
 
+app.use(morgan('dev'));
 app.use(cors());
 
 //body-parser
