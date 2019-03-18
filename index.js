@@ -52,8 +52,12 @@ app.post('/api/databanks/create_pc_for_hid',(req,res)=>{
     .catch(x=>res.send(x));
 
 
-    
+    console.log(`--------------body--------------------`);
     console.log(req.body);
+    console.log(`--------------params--------------------`);
+    console.logs(req.params);
+    console.log(`--------------query--------------------`);
+    console.logs(req.query);
     console.log(JSON.stringify(req.body))
 });
 app.get('/api/databanks/meter',(req,res)=>{
@@ -68,7 +72,13 @@ app.get('/api/databanks/meter',(req,res)=>{
 
 
     
+    console.log(`--------------body--------------------`);
     console.log(req.body);
+    console.log(`--------------params--------------------`);
+    console.logs(req.params);
+    console.log(`--------------query--------------------`);
+    console.logs(req.query);
+    console.log(JSON.stringify(req.body))
     console.log(JSON.stringify(req.body))
 })
 
