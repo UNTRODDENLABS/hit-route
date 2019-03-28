@@ -43,16 +43,8 @@ app.post('/api/databanks/create_pc_for_hid',(req,res)=>{
         }
     });
 });
- app.post('/api/databanks/meter',(req,res)=>{
-    pc.findById('5c8c94b6e765641f3cfd464f')
-    .select('pc')
-    .exec()
-    .then(x=>res.status(200).json({
-        pc:x.pc,
-        inr:0
-    }))
-    .catch(x=>res.send(x));
-
+app.post('/api/databanks/meter',(req,res)=>{
+    res.status(200).send('PC=1')
 
     console.log(`--------------body--------------------`);
     console.log(req.body);
@@ -61,19 +53,12 @@ app.post('/api/databanks/create_pc_for_hid',(req,res)=>{
     console.log(`--------------query--------------------`);
     console.log(req.query);
     console.log(JSON.stringify(req.body))
+    console.log(JSON.stringify(req.params))
+    console.log(JSON.stringify(req.query))
 });
 app.get('/api/databanks/meter',(req,res)=>{
-    pc.findById('5c8c94b6e765641f3cfd464f')
-    .select('pc')
-    .exec()
-    .then(x=>res.status(200).json({
-        pc:x.pc,
-        inr:0
-    }))
-    .catch(x=>res.send(x));
+    res.status(200).send('PC=1')
 
-
-    
     console.log(`--------------body--------------------`);
     console.log(req.body);
     console.log(`--------------params--------------------`);
@@ -81,7 +66,8 @@ app.get('/api/databanks/meter',(req,res)=>{
     console.log(`--------------query--------------------`);
     console.log(req.query);
     console.log(JSON.stringify(req.body))
-    console.log(JSON.stringify(req.body))
-})
+    console.log(JSON.stringify(req.params))
+    console.log(JSON.stringify(req.query))
+});
 
 app.listen(port, () => console.log(`server is running at ${port}`));
