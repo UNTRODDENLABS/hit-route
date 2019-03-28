@@ -52,9 +52,9 @@ app.post('/api/databanks/meter',(req,res)=>{
     console.log(req.params);
     console.log(`--------------query--------------------`);
     console.log(req.query);
-    console.log(JSON.stringify(req.body))
-    console.log(JSON.stringify(req.params))
-    console.log(JSON.stringify(req.query))
+    console.log('body--->'+JSON.stringify(req.body))
+    console.log('params--->'+JSON.stringify(req.params))
+    console.log('params--->'+JSON.stringify(req.query))
 });
 app.get('/api/databanks/meter',(req,res)=>{
     res.status(200).send('PC=1')
